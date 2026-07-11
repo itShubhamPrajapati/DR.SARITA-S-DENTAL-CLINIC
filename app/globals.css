@@ -1,0 +1,153 @@
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Warm Ambient shadow defined in DESIGN.md */
+  .shadow-ambient {
+    box-shadow: 0px 12px 32px rgba(45, 55, 72, 0.04);
+  }
+}
+
+@layer base {
+  :root {
+    /* Brand & Layout Colors from DESIGN.md */
+    --background: #FAF9F6; /* Alabaster */
+    --foreground: #121c2c; /* Deep Charcoal */
+    
+    --card: #FAF9F6;
+    --card-foreground: #121c2c;
+    
+    --popover: #ffffff;
+    --popover-foreground: #121c2c;
+    
+    --primary: #50604d; /* Sage Green */
+    --primary-foreground: #ffffff;
+    --primary-container: #687965;
+    --on-primary-container: #f7fff1;
+    
+    --secondary: #735c00; /* Soft Gold */
+    --secondary-foreground: #ffffff;
+    --secondary-container: #fed65b;
+    --on-secondary-container: #745c00;
+    
+    --tertiary: #8a4b2b; /* Terracotta */
+    --on-tertiary: #ffffff;
+    --tertiary-container: #a86341;
+    --on-tertiary-container: #fffbff;
+    
+    --muted: #F3EFEA; /* Soft Sand */
+    --muted-foreground: #444842; /* On-surface variant */
+    
+    --accent: #F3EFEA; /* Soft Sand */
+    --accent-foreground: #121c2c;
+    
+    --destructive: #ba1a1a;
+    --destructive-foreground: #ffffff;
+    
+    --border: #E2DED9; /* Soft diffusion border */
+    --input: #E2DED9;
+    --ring: #50604d;
+    
+    /* Semantic Surfaces from YAML */
+    --surface: #FAF9F6;
+    --surface-dim: #d0daf0;
+    --surface-bright: #FAF9F6;
+    --surface-container-lowest: #ffffff;
+    --surface-container-low: #f0f3ff;
+    --surface-container: #F3EFEA;
+    --surface-container-high: #EBE7E0;
+    --surface-container-highest: #E2DDD5;
+    --on-surface: #121c2c;
+    --on-surface-variant: #444842;
+    --inverse-surface: #273141;
+    --inverse-on-surface: #ebf1ff;
+    --outline: #747871;
+    --outline-variant: #c4c8bf;
+    --surface-tint: #526350;
+    
+    /* Border Radius standard from DESIGN.md */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Serene Dark Sanctuary Mode */
+    --background: #121511; /* Very dark warm slate-green */
+    --foreground: #f4f6f4;
+    
+    --card: #1a1e19;
+    --card-foreground: #f4f6f4;
+    
+    --popover: #121511;
+    --popover-foreground: #f4f6f4;
+    
+    --primary: #baccb4; /* Muted light sage */
+    --primary-foreground: #121511;
+    --primary-container: #3b4b39;
+    --on-primary-container: #d6e8cf;
+    
+    --secondary: #e9c349; /* Light Gold */
+    --secondary-foreground: #121511;
+    --secondary-container: #574500;
+    --on-secondary-container: #ffe088;
+    
+    --tertiary: #ffb693; /* Terracotta tint */
+    --on-tertiary: #351000;
+    --tertiary-container: #703718;
+    --on-tertiary-container: #ffdbcc;
+    
+    --muted: #1f231e;
+    --muted-foreground: #a6aba4;
+    
+    --accent: #1f231e;
+    --accent-foreground: #f4f6f4;
+    
+    --destructive: #ffdad6;
+    --destructive-foreground: #ba1a1a;
+    
+    --border: #2a2e29;
+    --input: #2a2e29;
+    --ring: #baccb4;
+    
+    --surface: #121511;
+    --surface-dim: #10120f;
+    --surface-bright: #1c201b;
+    --surface-container-lowest: #0b0d0a;
+    --surface-container-low: #151914;
+    --surface-container: #1a1e19;
+    --surface-container-high: #232822;
+    --surface-container-highest: #2b322a;
+    --on-surface: #f4f6f4;
+    --on-surface-variant: #c4c8bf;
+    --inverse-surface: #e2e8e2;
+    --inverse-on-surface: #121511;
+    --outline: #8e9389;
+    --outline-variant: #444842;
+    --surface-tint: #baccb4;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  
+  /* Heading typography setup */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}

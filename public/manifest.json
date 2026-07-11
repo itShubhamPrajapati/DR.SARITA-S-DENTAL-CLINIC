@@ -1,0 +1,19 @@
+{
+  "name": "Dr. Sarita Dental",
+  "short_name": "Dental Care",
+  "description": "Top-rated dental clinic in Nalasopara East by Dr. Sarita Jangid & Dr. Sonu Jangid. Book appointment for Root Canal, Implants & Braces.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f172a",
+  "orientation": "portrait",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/images/hero.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
