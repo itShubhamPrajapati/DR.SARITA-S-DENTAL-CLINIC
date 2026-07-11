@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Button } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -75,26 +75,37 @@ export default function Navbar() {
           {/* Desktop Navigation - Concierge small tracked-out labels */}
           <nav className="hidden md:flex space-x-8 items-center">
             {navItems.map((item) => (
-              <button
+              <a
                 key={item.label}
-                onClick={() => scrollToSection(item.target)}
+                href={`#${item.target}`}
+                onClick={(e) => {
+                  e.preventDefault()
+                  scrollToSection(item.target)
+                }}
                 className="text-xs font-semibold tracking-widest font-sans uppercase text-foreground/70 hover:text-primary transition-colors cursor-pointer relative group py-2"
               >
                 {item.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-              </button>
+              </a>
             ))}
           </nav>
 
           {/* Book Appointment CTA */}
           <div className="hidden md:flex items-center">
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-              <Button
-                onClick={() => scrollToSection("appointment")}
-                className="bg-primary hover:bg-primary/90 text-white font-sans text-xs uppercase tracking-widest font-semibold px-6 py-5 rounded-md shadow-xs transition-all"
+              <a
+                href="#appointment"
+                onClick={(e) => {
+                  e.preventDefault()
+                  scrollToSection("appointment")
+                }}
+                className={cn(
+                  buttonVariants({ variant: "default" }),
+                  "bg-primary hover:bg-primary/90 text-white font-sans text-xs uppercase tracking-widest font-semibold px-6 h-11 rounded-md shadow-xs transition-all flex items-center justify-center cursor-pointer"
+                )}
               >
                 Book Appointment
-              </Button>
+              </a>
             </motion.div>
           </div>
 
@@ -102,7 +113,7 @@ export default function Navbar() {
           <div className="flex items-center md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-foreground/80 hover:text-primary hover:bg-surface-container/50 transition-colors"
+              className="inline-flex items-center justify-center h-11 w-11 rounded-md text-foreground/80 hover:text-primary hover:bg-surface-container/50 transition-colors cursor-pointer"
               aria-expanded={isOpen}
             >
               <span className="sr-only">Open main menu</span>
@@ -120,24 +131,35 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden overflow-hidden bg-background border-b border-border/40"
+            className="md:hidden overflow-hidden bg-background border-b border-border/40 relative z-50 pointer-events-auto"
           >
-            <div className="px-5 pt-2 pb-8 space-y-4 flex flex-col items-start">
+            <div className="px-5 pt-2 pb-8 space-y-4 flex flex-col items-start relative z-50 pointer-events-auto">
               {navItems.map((item) => (
-                <button
+                <a
                   key={item.label}
-                  onClick={() => scrollToSection(item.target)}
-                  className="w-full text-left py-2 text-xs font-semibold tracking-widest font-sans uppercase text-foreground/80 hover:text-primary transition-colors"
+                  href={`#${item.target}`}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    scrollToSection(item.target)
+                  }}
+                  className="w-full text-left py-3 text-xs font-semibold tracking-widest font-sans uppercase text-foreground/80 hover:text-primary transition-colors flex items-center min-h-[44px] cursor-pointer pointer-events-auto"
                 >
                   {item.label}
-                </button>
+                </a>
               ))}
-              <Button
-                onClick={() => scrollToSection("appointment")}
-                className="w-full bg-primary hover:bg-primary/90 text-white font-sans text-xs uppercase tracking-widest font-semibold py-5 rounded-md transition-all mt-2"
+              <a
+                href="#appointment"
+                onClick={(e) => {
+                  e.preventDefault()
+                  scrollToSection("appointment")
+                }}
+                className={cn(
+                  buttonVariants({ variant: "default" }),
+                  "w-full bg-primary hover:bg-primary/90 text-white font-sans text-xs uppercase tracking-widest font-semibold h-11 rounded-md transition-all mt-2 flex items-center justify-center active:scale-95 duration-75 cursor-pointer pointer-events-auto"
+                )}
               >
                 Book Appointment
-              </Button>
+              </a>
             </div>
           </motion.div>
         )}

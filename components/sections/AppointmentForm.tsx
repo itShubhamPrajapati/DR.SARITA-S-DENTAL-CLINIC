@@ -91,14 +91,14 @@ export default function AppointmentForm() {
     return tomorrow.toISOString().split("T")[0]
   }
 
-  const inputStyles = "bg-surface-container-low border border-border/40 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:ring-offset-0 rounded-md px-4 py-5.5 text-sm transition-all"
+  const inputStyles = "bg-surface-container-low border border-border/40 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:ring-offset-0 rounded-md h-11 px-4 text-sm transition-all"
 
   return (
     <section 
       id="appointment" 
-      className="py-[120px] bg-surface-container/50 border-b border-border/40"
+      className="py-12 md:py-24 bg-surface-container/50 border-b border-border/40"
     >
-      <div className="max-w-[1280px] mx-auto px-5 md:px-16 flex justify-center">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-8 lg:px-12 flex justify-center">
         
         {/* Floating Concierge Booking Card with Warm Ambient shadow */}
         <div className="w-full max-w-2xl">
@@ -108,7 +108,7 @@ export default function AppointmentForm() {
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold font-sans tracking-widest uppercase bg-primary/10 text-primary border border-primary/20 self-start">
                 <CalendarIcon className="h-3 w-3" /> Booking Request
               </div>
-              <CardTitle className="text-[32px] font-semibold leading-[1.3] font-serif text-foreground">
+              <CardTitle className="text-2xl sm:text-3xl font-semibold leading-[1.3] font-serif text-foreground">
                 Schedule Your Visit
               </CardTitle>
               <CardDescription className="text-sm text-foreground/70 font-sans leading-relaxed">
@@ -204,7 +204,7 @@ export default function AppointmentForm() {
                           </FormLabel>
                           <FormControl>
                             <Select onValueChange={field.onChange} defaultValue={field.value}>
-                              <SelectTrigger className="bg-surface-container-low border border-border/40 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:ring-offset-0 focus-visible:ring-0 rounded-md px-4 py-5.5 text-sm shadow-none h-11 w-full transition-all">
+                              <SelectTrigger className="bg-surface-container-low border border-border/40 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:ring-offset-0 focus-visible:ring-0 rounded-md px-4 text-sm shadow-none h-11 w-full transition-all flex items-center justify-between">
                                 <SelectValue placeholder="Select time slot" />
                               </SelectTrigger>
                               <SelectContent className="bg-background border border-border/40 font-sans">
@@ -234,7 +234,7 @@ export default function AppointmentForm() {
                         </FormLabel>
                         <FormControl>
                           <Select onValueChange={field.onChange} defaultValue={field.value}>
-                            <SelectTrigger className="bg-surface-container-low border border-border/40 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:ring-offset-0 focus-visible:ring-0 rounded-md px-4 py-5.5 text-sm shadow-none h-11 w-full transition-all">
+                            <SelectTrigger className="bg-surface-container-low border border-border/40 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:ring-offset-0 focus-visible:ring-0 rounded-md px-4 text-sm shadow-none h-11 w-full transition-all flex items-center justify-between">
                               <SelectValue placeholder="Select treatment type" />
                             </SelectTrigger>
                             <SelectContent className="bg-background border border-border/40 font-sans">
@@ -266,7 +266,7 @@ export default function AppointmentForm() {
                     <Button
                       type="submit"
                       disabled={cooldown > 0}
-                      className="w-full bg-primary hover:bg-primary/95 text-white font-sans text-xs uppercase tracking-widest font-semibold py-6 rounded-md shadow-xs transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full bg-primary hover:bg-primary/95 text-white font-sans text-xs uppercase tracking-widest font-semibold h-11 rounded-md shadow-xs transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                     >
                       {cooldown > 0 ? (
                         `Resend Available in ${cooldown}s`

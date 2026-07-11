@@ -167,13 +167,13 @@ export default function HeroSection() {
   return (
     <section 
       id="hero" 
-      className="relative overflow-hidden bg-background pt-36 md:pt-[190px] pb-24 md:pb-[130px] border-b border-border/40"
+      className="relative overflow-hidden bg-background pt-28 pb-12 md:pt-[190px] md:pb-[130px] border-b border-border/40"
     >
       {/* Editorial layout background accent */}
       <div className="absolute top-0 right-0 w-[42%] h-[65%] bg-surface-container/30 rounded-bl-[240px] -z-10" />
 
-      <div className="max-w-[1280px] mx-auto px-5 md:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-8 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
           
           {/* Left Column: Authoritative Copy & Trust signals */}
           <motion.div 
@@ -192,11 +192,11 @@ export default function HeroSection() {
 
             {/* Premium Editorial Heading */}
             <motion.div className="space-y-4" variants={itemVariants}>
-              <h1 className="text-[44px] md:text-[68px] font-bold leading-[1.1] md:leading-[1.05] tracking-[-0.03em] font-serif text-foreground">
+              <h1 className="text-3xl sm:text-5xl lg:text-[68px] font-bold leading-[1.15] md:leading-[1.05] tracking-tight md:tracking-[-0.03em] font-serif text-foreground">
                 Advanced & Painless <br />
                 <span className="text-primary">Dental Sanctuary</span>
               </h1>
-              <p className="text-base md:text-lg text-foreground/80 leading-relaxed font-sans max-w-xl">
+              <p className="text-sm sm:text-base md:text-lg text-foreground/80 leading-relaxed font-sans max-w-xl">
                 Experience clinical excellence and boutique restoration led by Dr. Sarita & Dr. Sonu Jangid. Our clinic combines painless rotary endodontics with a calming environment to redefine your treatment expectations.
               </p>
             </motion.div>
@@ -225,19 +225,19 @@ export default function HeroSection() {
               className="flex flex-col sm:flex-row gap-4 justify-start items-stretch sm:items-center pt-2"
               variants={itemVariants}
             >
-              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="sm:w-auto w-full">
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
                 <Button
                   onClick={handleBookClick}
-                  className="w-full sm:w-auto bg-primary hover:bg-primary/95 text-white font-sans text-xs uppercase tracking-widest font-semibold px-8 py-6 rounded-md shadow-xs hover:shadow-ambient transition-all flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto bg-primary hover:bg-primary/95 text-white font-sans text-xs uppercase tracking-widest font-semibold h-11 px-8 rounded-md shadow-xs hover:shadow-ambient transition-all flex items-center justify-center gap-2"
                 >
                   <Calendar className="h-4 w-4" /> Book Consultation
                 </Button>
               </motion.div>
 
-              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="sm:w-auto w-full">
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
                 <a
                   href="tel:9822824889"
-                  className="w-full sm:w-auto flex items-center justify-center gap-2 border border-foreground/30 hover:border-foreground/85 text-foreground font-sans text-xs uppercase tracking-widest font-semibold px-8 py-5.5 rounded-md transition-all hover:bg-surface-container/30"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 border border-foreground/30 hover:border-foreground/85 text-foreground font-sans text-xs uppercase tracking-widest font-semibold h-11 px-8 rounded-md transition-all hover:bg-surface-container/30"
                 >
                   <Phone className="h-4 w-4 text-primary" /> Call Now
                 </a>

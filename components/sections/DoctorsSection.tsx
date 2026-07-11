@@ -46,19 +46,19 @@ export default function DoctorsSection() {
   return (
     <section 
       id="doctors" 
-      className="py-[120px] bg-background border-b border-border/40"
+      className="py-12 md:py-24 bg-background border-b border-border/40"
     >
-      <div className="max-w-[1280px] mx-auto px-5 md:px-16">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-8 lg:px-12">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-20 space-y-4">
+        <div className="text-center max-w-2xl mx-auto mb-12 md:mb-20 space-y-4">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold font-sans tracking-widest uppercase bg-primary/10 text-primary border border-primary/20">
             Specialists
           </div>
-          <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.3] md:leading-[1.2] font-serif text-foreground">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-semibold leading-[1.2] font-serif text-foreground">
             Meet Our Expert Surgeons
           </h2>
-          <p className="text-sm md:text-base text-foreground/75 font-sans leading-relaxed">
+          <p className="text-sm sm:text-base text-foreground/75 font-sans leading-relaxed">
             Dr. Sarita & Dr. Sonu Jangid combine academic excellence with deep empathy, providing a personalized, anxiety-free dental experience.
           </p>
         </div>
@@ -105,7 +105,7 @@ export default function DoctorsSection() {
                     <span className="text-[10px] font-bold font-sans tracking-widest uppercase text-secondary">
                       {doctor.title}
                     </span>
-                    <h3 className="text-2xl sm:text-3xl font-serif font-semibold text-foreground tracking-tight">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-serif font-semibold text-foreground tracking-tight">
                       {doctor.name}
                     </h3>
                   </div>

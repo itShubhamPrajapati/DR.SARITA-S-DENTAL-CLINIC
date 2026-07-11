@@ -41,25 +41,25 @@ export default function WhyChooseUs() {
   }
 
   return (
-    <section className="py-[120px] bg-surface-container border-b border-border/40">
-      <div className="max-w-[1280px] mx-auto px-5 md:px-16">
+    <section className="py-12 md:py-24 bg-surface-container border-b border-border/40">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-8 lg:px-12">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-20 space-y-4">
+        <div className="text-center max-w-2xl mx-auto mb-12 md:mb-20 space-y-4">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold font-sans tracking-widest uppercase bg-primary/10 text-primary border border-primary/20">
             Why Choose Us
           </div>
-          <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.3] md:leading-[1.2] font-serif text-foreground">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-semibold leading-[1.2] font-serif text-foreground">
             A New Standard of Dental Care
           </h2>
-          <p className="text-sm md:text-base text-foreground/70 font-sans leading-relaxed">
+          <p className="text-sm sm:text-base text-foreground/70 font-sans leading-relaxed">
             We bridge clinical excellence with calming wellness hospitality, ensuring your journey is painless, precise, and completely reassuring.
           </p>
         </div>
 
         {/* 3-Column Grid */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
