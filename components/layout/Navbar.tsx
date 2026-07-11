@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Button, buttonVariants } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -23,19 +23,30 @@ export default function Navbar() {
   }, [])
 
   const scrollToSection = (id: string) => {
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768
     setIsOpen(false)
-    const element = document.getElementById(id)
-    if (element) {
-      const offset = 90 // Height of navbar + some breathing room
-      const bodyRect = document.body.getBoundingClientRect().top
-      const elementRect = element.getBoundingClientRect().top
-      const elementPosition = elementRect - bodyRect
-      const offsetPosition = elementPosition - offset
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      })
+    const performScroll = () => {
+      const element = document.getElementById(id)
+      if (element) {
+        const offset = 90 // Height of navbar + some breathing room
+        const bodyRect = document.body.getBoundingClientRect().top
+        const elementRect = element.getBoundingClientRect().top
+        const elementPosition = elementRect - bodyRect
+        const offsetPosition = elementPosition - offset
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        })
+      }
+    }
+
+    if (isMobile) {
+      // Wait for the drawer animation (300ms) to complete to avoid layout shifts throwing off calculation
+      setTimeout(performScroll, 320)
+    } else {
+      performScroll()
     }
   }
 
