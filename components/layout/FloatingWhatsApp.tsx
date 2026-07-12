@@ -4,7 +4,7 @@ import React from "react"
 import { motion } from "framer-motion"
 
 export default function FloatingWhatsApp() {
-  const whatsappUrl = "https://wa.me/917219777569?text=I%20would%20like%20to%20book%20a%20consultation"
+  const whatsappUrl = "https://wa.me/919822824889?text=I%20would%20like%20to%20book%20a%20consultation"
 
   return (
     <a
