@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { buttonVariants } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
+import GlassSurface from "@/components/ui/GlassSurface"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -58,16 +59,18 @@ export default function Navbar() {
   ]
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        scrolled
-          ? "bg-background/90 backdrop-blur-md border-b border-border/40 shadow-ambient py-4"
-          : "bg-transparent border-b border-transparent py-6"
-      )}
-    >
-      <div className="max-w-[1280px] mx-auto px-5 md:px-16">
-        <div className="flex justify-between items-center h-12">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-transparent px-4 pointer-events-none">
+      <GlassSurface
+        backgroundOpacity={0.1}
+        blur={15}
+        borderRadius={24}
+        className="max-w-6xl mx-auto mt-4 border border-white/20 pointer-events-auto"
+        displace={20}
+        height={80}
+        opacity={0.8}
+        width="100%"
+      >
+        <div className="flex items-center justify-between w-full px-8">
           
           {/* Logo - Playfair Display Editorial style */}
           <motion.div 
@@ -132,7 +135,7 @@ export default function Navbar() {
             </button>
           </div>
         </div>
-      </div>
+      </GlassSurface>
 
       {/* Mobile Navigation Drawer with Framer Motion */}
       <AnimatePresence>
@@ -142,9 +145,9 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden overflow-hidden bg-background border-b border-border/40 relative z-50 pointer-events-auto"
+            className="md:hidden overflow-hidden bg-background/95 backdrop-blur-md border border-border/40 relative z-50 pointer-events-auto max-w-6xl mx-auto mt-2 rounded-2xl shadow-lg"
           >
-            <div className="px-5 pt-2 pb-8 space-y-4 flex flex-col items-start relative z-50 pointer-events-auto">
+            <div className="px-5 pt-4 pb-8 space-y-4 flex flex-col items-start relative z-50 pointer-events-auto">
               {navItems.map((item) => (
                 <a
                   key={item.label}
