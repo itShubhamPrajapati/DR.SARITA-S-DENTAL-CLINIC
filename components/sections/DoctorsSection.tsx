@@ -75,25 +75,24 @@ export default function DoctorsSection() {
             <motion.div
               key={index}
               variants={cardVariants}
-              whileHover={{ y: -5, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
-              <Card className="group h-full overflow-hidden border-none bg-surface-container text-foreground shadow-none rounded-md transition-all duration-300 hover:shadow-ambient">
+              <Card className="group h-full overflow-hidden border-none bg-surface-container text-foreground shadow-none rounded-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/50">
                 
                 {/* Doctor Portrait - Archway top crop with subtle hover zoom */}
                 <div className="pt-8 px-8 flex justify-center bg-surface-container-low">
-                  <div className="relative w-full max-w-[280px] aspect-[4/5] rounded-[100px_100px_0_0] overflow-hidden border border-border/20 bg-background/50">
+                  <div className="relative w-full max-w-[280px] aspect-[3/4] rounded-t-xl overflow-hidden border border-border/20 bg-background/50">
                     <motion.div 
                       className="w-full h-full relative"
                       whileHover={{ scale: 1.04 }}
                       transition={{ duration: 0.5, ease: "easeOut" }}
                     >
+                      {/* TODO: Replace with real high-resolution, professionally lit photos of Dr. Sarita and Dr. Sonu before production */}
                       <Image
                         src={doctor.image}
                         alt={doctor.name}
                         fill
                         sizes="(max-w-7xl) 100vw, 300px"
-                        className="object-cover object-top"
+                        className="object-cover object-top rounded-t-xl"
                       />
                     </motion.div>
                   </div>

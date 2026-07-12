@@ -122,7 +122,7 @@ export default function Testimonials() {
           {/* Navigation Controls */}
           <button
             onClick={handlePrev}
-            className="absolute left-1 md:left-[-60px] h-11 w-11 flex items-center justify-center rounded-full bg-background border border-border/40 hover:bg-surface-container text-foreground transition-all active:scale-95 shadow-sm"
+            className="absolute left-2 md:-left-4 h-11 w-11 flex items-center justify-center rounded-full bg-background border border-border/40 hover:bg-surface-container text-foreground transition-all active:scale-95 shadow-sm"
             aria-label="Previous testimonial"
           >
             <ChevronLeft className="h-5 w-5" />
@@ -130,7 +130,7 @@ export default function Testimonials() {
           
           <button
             onClick={handleNext}
-            className="absolute right-1 md:right-[-60px] h-11 w-11 flex items-center justify-center rounded-full bg-background border border-border/40 hover:bg-surface-container text-foreground transition-all active:scale-95 shadow-sm"
+            className="absolute right-2 md:-right-4 h-11 w-11 flex items-center justify-center rounded-full bg-background border border-border/40 hover:bg-surface-container text-foreground transition-all active:scale-95 shadow-sm"
             aria-label="Next testimonial"
           >
             <ChevronRight className="h-5 w-5" />

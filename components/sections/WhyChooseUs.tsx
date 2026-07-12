@@ -49,7 +49,7 @@ export default function WhyChooseUs() {
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold font-sans tracking-widest uppercase bg-primary/10 text-primary border border-primary/20">
             Why Choose Us
           </div>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-semibold leading-[1.2] font-serif text-foreground">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-semibold leading-[1.2] font-serif text-foreground text-balance">
             A New Standard of Dental Care
           </h2>
           <p className="text-sm sm:text-base text-foreground/70 font-sans leading-relaxed">
@@ -71,8 +71,7 @@ export default function WhyChooseUs() {
               <motion.div
                 key={index}
                 variants={cardVariants}
-                whileHover={{ y: -5 }}
-                className="bg-background p-8 rounded-md shadow-xs hover:shadow-ambient transition-all duration-300 flex flex-col items-center text-center space-y-5 border border-border/10"
+                className="bg-background p-8 rounded-md shadow-xs flex flex-col items-center text-center space-y-5 border border-border/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/50"
               >
                 {/* Icon Container */}
                 <div className="p-4 bg-primary/10 text-primary rounded-full">

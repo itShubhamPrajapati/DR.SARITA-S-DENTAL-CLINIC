@@ -46,7 +46,7 @@ export default function Footer() {
                 <Mail className="h-4.5 w-4.5 text-primary shrink-0" />
                 <a
                   href="mailto:DOCTORSARITAJANGID@GMAIL.COM"
-                  className="hover:text-white transition-colors truncate"
+                  className="hover:text-white transition-colors break-all"
                 >
                   DOCTORSARITAJANGID@GMAIL.COM
                 </a>

@@ -68,8 +68,8 @@ export default function AppointmentForm() {
     const formattedDate = isNaN(dateObj.getTime())
       ? data.date
       : `${String(dateObj.getDate()).padStart(2, "0")}-${String(
-          dateObj.getMonth() + 1
-        ).padStart(2, "0")}-${dateObj.getFullYear()}`
+        dateObj.getMonth() + 1
+      ).padStart(2, "0")}-${dateObj.getFullYear()}`
 
     // Construct WhatsApp message text
     const message = `New Appointment Request\n\nName: ${data.name}\nPhone: ${data.phone}\nDate: ${formattedDate}\nSlot: ${data.slot}\nTreatment: ${data.treatment}`
@@ -91,19 +91,19 @@ export default function AppointmentForm() {
     return tomorrow.toISOString().split("T")[0]
   }
 
-  const inputStyles = "bg-surface-container-low border border-border/40 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:ring-offset-0 rounded-md h-11 px-4 text-sm transition-all"
+  const inputStyles = "bg-[#FAF9F6] border border-border/40 focus:border-slate-400 focus:ring-2 focus:ring-slate-400 focus-visible:border-slate-400 focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-0 rounded-md h-11 px-4 text-sm transition-all [&:-webkit-autofill]:bg-transparent [&:-webkit-autofill]:shadow-[0_0_0px_1000px_#FAF9F6_inset]"
 
   return (
-    <section 
-      id="appointment" 
+    <section
+      id="appointment"
       className="py-12 md:py-24 bg-surface-container/50 border-b border-border/40"
     >
       <div className="max-w-[1280px] mx-auto px-4 md:px-8 lg:px-12 flex justify-center">
-        
+
         {/* Floating Concierge Booking Card with Warm Ambient shadow */}
         <div className="w-full max-w-2xl">
           <Card className="border-none bg-background text-foreground shadow-ambient rounded-md overflow-hidden p-2 sm:p-6">
-            
+
             <CardHeader className="p-6 sm:p-10 pb-4 space-y-3">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold font-sans tracking-widest uppercase bg-primary/10 text-primary border border-primary/20 self-start">
                 <CalendarIcon className="h-3 w-3" /> Booking Request
@@ -119,9 +119,9 @@ export default function AppointmentForm() {
             <CardContent className="p-6 sm:p-10 pt-4">
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-                  
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
-                    
+
                     {/* Patient Name */}
                     <FormField
                       control={form.control}
@@ -133,7 +133,6 @@ export default function AppointmentForm() {
                           </FormLabel>
                           <FormControl>
                             <Input
-                              placeholder="e.g. Rahul Sharma"
                               className={inputStyles}
                               autoComplete="name"
                               {...field}
@@ -157,7 +156,6 @@ export default function AppointmentForm() {
                             <Input
                               type="tel"
                               maxLength={10}
-                              placeholder="e.g. 9876543210"
                               className={inputStyles}
                               autoComplete="tel"
                               {...field}
@@ -170,7 +168,7 @@ export default function AppointmentForm() {
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
-                    
+
                     {/* Preferred Date */}
                     <FormField
                       control={form.control}
@@ -204,7 +202,7 @@ export default function AppointmentForm() {
                           </FormLabel>
                           <FormControl>
                             <Select onValueChange={field.onChange} defaultValue={field.value}>
-                              <SelectTrigger className="bg-surface-container-low border border-border/40 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:ring-offset-0 focus-visible:ring-0 rounded-md px-4 text-sm shadow-none h-11 w-full transition-all flex items-center justify-between">
+                              <SelectTrigger className="bg-[#FAF9F6] border border-border/40 focus:border-slate-400 focus:ring-2 focus:ring-slate-400/20 focus-visible:border-slate-400 focus-visible:ring-2 focus-visible:ring-slate-400/20 focus-visible:ring-offset-0 rounded-md px-4 text-sm shadow-none h-11 w-full transition-all flex items-center justify-between">
                                 <SelectValue placeholder="Select time slot" />
                               </SelectTrigger>
                               <SelectContent className="bg-background border border-border/40 font-sans">
@@ -234,7 +232,7 @@ export default function AppointmentForm() {
                         </FormLabel>
                         <FormControl>
                           <Select onValueChange={field.onChange} defaultValue={field.value}>
-                            <SelectTrigger className="bg-surface-container-low border border-border/40 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:ring-offset-0 focus-visible:ring-0 rounded-md px-4 text-sm shadow-none h-11 w-full transition-all flex items-center justify-between">
+                            <SelectTrigger className="bg-[#FAF9F6] border border-border/40 focus:border-slate-400 focus:ring-2 focus:ring-slate-400/20 focus-visible:border-slate-400 focus-visible:ring-2 focus-visible:ring-slate-400/20 focus-visible:ring-offset-0 rounded-md px-4 text-sm shadow-none h-11 w-full transition-all flex items-center justify-between">
                               <SelectValue placeholder="Select treatment type" />
                             </SelectTrigger>
                             <SelectContent className="bg-background border border-border/40 font-sans">

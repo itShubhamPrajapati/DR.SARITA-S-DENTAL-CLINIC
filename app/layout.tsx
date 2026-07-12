@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next"
 import { Playfair_Display, Manrope } from "next/font/google"
 import { GoogleAnalytics } from "@next/third-parties/google"
+import FloatingWhatsApp from "@/components/layout/FloatingWhatsApp"
 import "./globals.css"
 import { cn } from "@/lib/utils"
 
@@ -106,6 +107,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {children}
+        <FloatingWhatsApp />
         {/* Google Analytics component */}
         <GoogleAnalytics gaId="G-XXXXXXXXXX" />
       </body>

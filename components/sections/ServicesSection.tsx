@@ -134,9 +134,7 @@ export default function ServicesSection() {
               <motion.div
                 key={index}
                 variants={cardVariants}
-                whileHover={{ y: -6, scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="bg-surface-container rounded-md p-8 border border-border/10 shadow-xs hover:shadow-ambient flex flex-col justify-between h-[340px] group transition-shadow duration-300 cursor-pointer"
+                className="bg-surface-container rounded-md p-8 border border-border/10 shadow-xs flex flex-col justify-between h-full group transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/50 cursor-pointer"
                 onClick={handleBookClick}
               >
                 <div className="space-y-5">
